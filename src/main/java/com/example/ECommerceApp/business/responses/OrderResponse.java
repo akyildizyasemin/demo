@@ -13,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 public class OrderResponse {
     private int orderId;
+    private int customerId;
     private List<OrderProductResponse> orderProducts;
     private Date orderDate;
     private OrderStatus orderStatus;
