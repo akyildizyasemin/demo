@@ -20,16 +20,16 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int orderId;
 
-//    @ManyToOne
-//    @JoinColumn(name = "user_id", nullable = false)
-//    private User user;
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
-//    @OneToMany(mappedBy = "productId")
-//    private List<OrderProduct> orderProducts;
+    @OneToMany(mappedBy = "productId")
+    private List<OrderProduct> orderProducts;
 
-//    @OneToOne
-//    @JoinColumn(name = "payment_id", nullable = false)
-//    private Payment payment;
+    @OneToOne
+    @JoinColumn(name = "payment_id", nullable = false)
+    private Payment payment;
 
     @Column(name = "order_date")
     private Date orderDate;

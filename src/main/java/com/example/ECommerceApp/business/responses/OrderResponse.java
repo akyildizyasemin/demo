@@ -12,9 +12,14 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class OrderResponse {
+
     private int orderId;
     private int customerId;
     private List<OrderProductResponse> orderProducts;
     private Date orderDate;
     private OrderStatus orderStatus;
+
+    public OrderResponse(int orderId) {
+        this.orderId = orderId;
+    }
 }
