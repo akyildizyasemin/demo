@@ -2,15 +2,11 @@ package com.example.ECommerceApp.webApi.controllers;
 
 import com.example.ECommerceApp.business.abstracts.ShoppingCartService;
 import com.example.ECommerceApp.business.requests.UpdateShoppingCartProductRequest;
-import com.example.ECommerceApp.business.requests.create.UpdateProductRequest;
 import com.example.ECommerceApp.business.responses.ProductResponse;
 import com.example.ECommerceApp.business.responses.ShoppingCartProductResponse;
 import com.example.ECommerceApp.business.responses.ShoppingCartResponse;
-import com.example.ECommerceApp.core.utilities.mappers.ModelMapperService;
-import com.example.ECommerceApp.entities.concretes.Product;
 import com.example.ECommerceApp.exception.NotFoundException;
 import lombok.AllArgsConstructor;
-import org.aspectj.bridge.MessageUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

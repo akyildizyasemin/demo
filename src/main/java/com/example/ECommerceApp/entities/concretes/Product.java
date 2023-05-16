@@ -53,9 +53,9 @@ public class Product {
     @Enumerated(EnumType.STRING)
     @Column(name = "product_material", nullable = false)
     private ProductMaterial productMaterial;
-//
-//    @OneToMany(mappedBy = "tb_product")
-//    private List<OrderProduct> orderProducts;
+
+    @OneToMany(mappedBy = "tb_product")
+    private List<OrderProduct> orderProducts;
 
 }
 

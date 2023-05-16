@@ -20,7 +20,7 @@ public interface OrderService {
 
     OrderResponse getOrderById(OrderResponse orderResponse);
     List<OrderResponse> getOrdersByStatus(OrderStatus orderStatus);
-    List<OrderResponse> getOrdersByCustomerId(CustomerResponse customerResponse);
+    List<OrderResponse> getOrdersByUserId(UserResponse userResponse);
 
 
 }

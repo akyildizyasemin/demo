@@ -5,11 +5,14 @@ import com.example.ECommerceApp.business.requests.CreateOrderRequest;
 import com.example.ECommerceApp.business.responses.OrderResponse;
 import com.example.ECommerceApp.core.utilities.mappers.ModelMapperService;
 import com.example.ECommerceApp.dataAccess.abstracts.OrderRepository;
+import com.example.ECommerceApp.dataAccess.abstracts.UserRepository;
 import com.example.ECommerceApp.entities.concretes.Order;
+import com.example.ECommerceApp.entities.concretes.User;
 import com.example.ECommerceApp.enums.OrderStatus;
 import com.example.ECommerceApp.exception.InvalidStateException;
 import com.example.ECommerceApp.exception.NotFoundException;
 import lombok.AllArgsConstructor;
+import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -24,6 +27,7 @@ public class OrderManager implements OrderService {
     private OrderService orderService;
     private ModelMapperService modelMapperService;
     private OrderRepository orderRepository;
+    private UserRepository userRepository;
 
 
     @Override
@@ -42,9 +46,9 @@ public class OrderManager implements OrderService {
 
 
     @Override
-    public List<OrderResponse> getOrdersByCustomerId(CustomerResponse customerResponse) {
-        int customerId = customerResponse.getId();
-        List<Order> orders = orderRepository.findByCustomerId(customerId);
+    public List<OrderResponse> getOrdersByUserId(UserResponse userResponse) {
+        int userId = userResponse.getId();
+        List<Order> orders = orderRepository.findByUserId(userId);
         List<OrderResponse> orderResponses = new ArrayList<>();
 
         for (Order order : orders) {
@@ -84,7 +88,7 @@ public class OrderManager implements OrderService {
 
     @Override
     public void updateOrderAddressByUserId(int userId, String newAddress) {
-        User user = userRepository.findById(userId)
+        User user = UserRepository.findById(userId)
                 .orElseThrow(() -> new NotFoundException("User not found with ID: " + userId));
 
         // Kullanıcının sipariş adres bilgisini güncelle

@@ -13,6 +13,7 @@ import java.util.Map;
 public class ProductResponse {
     private int id;
     private String name;
+    private CategoryResponse categoryResponse;
     private RingSize ringSize;
     private Map<RingSize, Integer> sizeStockMap;
     private double price;
