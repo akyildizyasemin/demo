@@ -6,12 +6,12 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class ShoppingCartResponse {
-    private int cartId;
-    private List<ShoppingCartProductResponse> products;
-    private int totalQuantity;
-    private double totalPrice;
-}
+    @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
+    public class ShoppingCartResponse {
+        private int cartId;
+        private List<ShoppingCartProductResponse> products;
+        private int totalQuantity;
+        private double totalPrice;
+    }

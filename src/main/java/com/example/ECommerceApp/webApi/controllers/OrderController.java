@@ -74,5 +74,12 @@ public class OrderController {
         return ResponseEntity.noContent().build();
     }
 
+    @PostMapping("/{orderId}/deliver")
+    public ResponseEntity<Void> markOrderAsDelivered(@PathVariable int orderId) {
+        OrderResponse orderResponse = orderService.getOrderById(new OrderResponse(orderId));
+        orderService.markOrderAsDelivered(orderResponse);
+        return ResponseEntity.noContent().build();
+    }
+
 
 }

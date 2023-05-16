@@ -1,4 +1,5 @@
-package com.example.ECommerceApp.business.requests;
+package com.example.ECommerceApp.business.requests.create;
+
 import com.example.ECommerceApp.enums.ProductMaterial;
 import com.example.ECommerceApp.enums.RingSize;
 import jakarta.persistence.EnumType;
@@ -6,15 +7,14 @@ import jakarta.persistence.Enumerated;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
-import java.util.HashMap;
 import java.util.Map;
 
 @Data
 @AllArgsConstructor
-public class CreateProductRequest {
-
+public class UpdateProductRequest {
+    private int productId;
+    @NotNull
     private String productName;
 
     @NotNull
@@ -23,6 +23,10 @@ public class CreateProductRequest {
     @NotNull
     private String productImageUrl;
 
+    private Map<RingSize, Integer> sizeStockMap;
+
+    private double price;
+
     @NotNull
     private String productDetails;
 
@@ -30,10 +34,6 @@ public class CreateProductRequest {
     @NotNull
     private ProductMaterial productMaterial;
 
-    @NotNull
-    private Map<RingSize, Integer> sizeStockMap;
-    public CreateProductRequest() {
-        this.sizeStockMap = new HashMap<>();
-    }
-
+    @Enumerated(EnumType.STRING)
+    private RingSize ringSize;
 }
