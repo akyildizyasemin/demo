@@ -2,13 +2,8 @@
 ### Team Members
 
 Ali Armağan Uygun
-328*****62
-
 Yasemin Akyıldız
-369*****60
-
 Yavuz Yılmaz
-
 Mehmet Ali Erel
 
 ### Ring E-commerce Site Vision Statement
